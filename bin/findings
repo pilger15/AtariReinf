@@ -1,0 +1,21 @@
+
+
+- policy, 1e-3 lr, 2 frame difference, FC or CNN works !
+- policy, 1e-3 lr, 4 frame  CNN doesnt FUCKING works !
+-  #TODO testing - policy 1e-4 lr, 4 frame  CNN doesnt FUCKING works !  this seems to work do further testing
+
+- WE noted that for Q learning the lr has to be >= 1e-4 otherwise we get diverging q-values ( gradient explosier? )
+- We maybee noted that the replay capacity has to be high? (google paper nasty feedback loops ?)
+- baseline checks:
+- substracting running baseline performs roughly the same like normalization ( not super sure we only made a short test)
+- cnn plays not so shaky compared top fc
+- in general unstable same algorithm + same architecture different preprocessing results in completly different results
+
+
+# ToDO
+check performance earlier during training what are the strategies used be the agent
+
+Testing:
+Policy, DQN -> Frame Difference, lr = e-3, e-4 ; FC|CNN
+AC -> Frame Difference, lr = e-3, e-4 ; CNN
+AC with pretrained DQN-Critic
